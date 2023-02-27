@@ -1,9 +1,24 @@
-
+import { useEffect, useState } from "react"
 
 export default function SecretInfo() {
-  return(
+  const [secretStuff, setSecretStuff] = useState()
+
+  useEffect(() => {
+    // make a secure call to our API to get the secret info
+    fetch("http://localhost:3030/secrets")
+      .then(res => res.json())
+      .then((data) => setSecretStuff(data.message))
+      .catch(alert)
+  }, [])
+
+  // make a secure call to our API to get the secret info
+  return (
     <>
-      <h2>Secrets shhhhh</h2>
+    <h1>Secret Info</h1>
+      {secretStuff
+        ? <h2>{ secretStuff }</h2>
+        : <h2>Loading...</h2>
+  }
     </>
   )
 }
