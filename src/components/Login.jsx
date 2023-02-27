@@ -1,16 +1,17 @@
 import { initializeApp } from "firebase/app"
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBhKtoDkEyjLPmg9v-XikkMzcgNCINTQQg",
+  authDomain: "fb-jwt-if.firebaseapp.com",
+  projectId: "fb-jwt-if",
+  storageBucket: "fb-jwt-if.appspot.com",
+  messagingSenderId: "183852282809",
+  appId: "1:183852282809:web:db83a61cbcba0938037c68"
+};
+
 export default function Login({setIsLoggedIn}) {
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBhKtoDkEyjLPmg9v-XikkMzcgNCINTQQg",
-    authDomain: "fb-jwt-if.firebaseapp.com",
-    projectId: "fb-jwt-if",
-    storageBucket: "fb-jwt-if.appspot.com",
-    messagingSenderId: "183852282809",
-    appId: "1:183852282809:web:db83a61cbcba0938037c68"
-  };
 
   const handleSignin = () => {
     // connect to firebase project
